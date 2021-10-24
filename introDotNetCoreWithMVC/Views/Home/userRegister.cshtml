@@ -1,0 +1,30 @@
+﻿@model introDotNetCoreWithMVC.Model.user
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>userRegister</title>
+</head>
+<body>
+    <form>
+        <p>
+            <input  placeholder="Ad" asp-for="Name" value="" />
+        </p>
+        <span asp-validation-for="Name"></span>
+
+        <p> <input  placeholder="Soyad" asp-for="LastName" value="" /> </p>
+        <span asp-validation-for="LastName"></span>
+
+        <p>
+            <input  placeholder="Eposta" asp-for="Email" value="" />
+            <span asp-validation-for="Email"></span>
+        </p>
+        <button type="submit"> Ekle</button>
+    </form>
+</body>
+</html>

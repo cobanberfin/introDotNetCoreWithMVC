@@ -1,0 +1,31 @@
+﻿@model PostAndCommentViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+<h1>@Model.Post.Title</h1>
+
+<p>
+    @Model.Post.Content
+</p>
+<hr />
+<h3>yorumlar</h3>
+<ul>
+    @foreach (var comment in Model.Comments)
+    {
+        <li>
+            <h4> @comment.Name</h4>
+            <p>@comment.Context</p>
+        </li>
+    }
+</ul>
+<!--yorum ekleme-->
+<form asp-action"Index" asp-controller="Post">
+    <input placeholder="Adınız" name="Name" />
+    <input placeholder="yorumunuz" name="Context" />
+    <button type="submit">Gönder</button>
+
+</form>
+
+

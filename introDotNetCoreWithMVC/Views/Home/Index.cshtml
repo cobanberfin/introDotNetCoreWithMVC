@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <p>Merhaba @ViewBag.Name</p>
+    @if (ViewBag.IsRedPill)
+    {
+        <p>kırmızı hap tercih ettiniz...</p>
+    }
+    else
+    {
+        <p>mavi hap tercih ettiniz...</p>
+
+    }
+    <ul>
+        @foreach (var item in ViewBag.Products)
+        {
+            <li>
+                @item
+            </li>
+        }
+    </ul>
+    <a href="/Home/useModel">Model örengi</a>
+     
+</body>
+</html>
